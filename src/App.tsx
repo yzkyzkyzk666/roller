@@ -4,7 +4,8 @@ import Home from "./pages/Home"
 import ScrollToTop from "react-scroll-up"
 import { FiChevronUp } from "react-icons/fi"
 import Footer from "./components/Footer"
-import News from "./pages/News"
+import BlogSingle from "./pages/blog/BlogSingle"
+import BlogList from "./pages/blog/BlogList"
 import Header from "./components/Header"
 import People from "./pages/People"
 import Services from "./pages/Services"
@@ -22,7 +23,8 @@ const App = () => (
         <Route path="/services" component={Services} />
         <Route path="/people" component={People} />
         <Route path="/contact" component={Contact} />
-        <Route path="/news/:id" component={News} />
+        <Route path="/blog/:id" component={BlogSingle} />
+        <Route path="/blog" component={BlogList} />
         <Redirect from="*" to="/" />
       </Switch>
 
