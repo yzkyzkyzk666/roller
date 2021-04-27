@@ -27,7 +27,7 @@ export const customLink = (type, element, content, children, index) => (
   </Link>
 )
 
-// Client method to query documents from the Prismic repo
+// Client method to query documents from the Prismic repo using GraphQL
 export const client = new ApolloClient({
   link: PrismicLink({
     uri: gqlEndpoint,

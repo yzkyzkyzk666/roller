@@ -6,19 +6,22 @@ import { FiChevronUp } from "react-icons/fi"
 import Footer from "./components/Footer"
 import News from "./pages/News"
 import Header from "./components/Header"
-
-let Software
-let Consultancy
+import People from "./pages/People"
+import Services from "./pages/Services"
+import Products from "./pages/Products"
+import Contact from "./pages/Contact"
 
 const App = () => (
-  <BrowserRouter>
-    <div className="App">
+  <div className="App">
+    <BrowserRouter>
       <Header />
 
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/software" component={Software} />
-        <Route path="/consultancy" component={Consultancy} />
+        <Route path="/products" component={Products} />
+        <Route path="/services" component={Services} />
+        <Route path="/people" component={People} />
+        <Route path="/contact" component={Contact} />
         <Route path="/news/:id" component={News} />
         <Redirect from="*" to="/" />
       </Switch>
@@ -31,8 +34,8 @@ const App = () => (
       </div>
       {/* End Back To Top */}
       <Footer />
-    </div>
-  </BrowserRouter>
+    </BrowserRouter>
+  </div>
 )
 
 export default App

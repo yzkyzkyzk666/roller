@@ -1,0 +1,17 @@
+{
+  // common
+  Phone: "电话",
+
+  // menu
+  Home: "首页",
+  Products: "产品",
+  Services: "服务",
+  People: "团队",
+  Contact: "联系我们",
+
+  // footer
+  "Enough Talk, Lets Build Something Together": "一说不如一做，让我们用事实说话",
+  "Get in contact": "现在联系我们",
+  "Quick Link": "快速访问",
+  "Say Hello": "联系"
+}
