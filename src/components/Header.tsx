@@ -1,30 +1,31 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation} from "react-router-dom"
 import { ReactComponent as Logo } from "../assets/images/logo/roller-logo.svg"
 import { FiMenu, FiX } from "react-icons/fi"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 import { FaChevronDown } from "react-icons/fa"
 import menu from "../menu"
 import { languages } from "../index"
 
-const openMenu = () => {
-  return
-}
-const closeMenu = () => {
-  return
-}
-
 const Li = styled.li`
   cursor: pointer;
 `
 
 const Header = () => {
+  const [menuVisible,setMenuVisible] = useState(false)
   const [t, i18n] = useTranslation()
+
+  //如果监测到url变化，就把state改为false
+  const location = useLocation();
+
+  React.useEffect(() => {
+    setMenuVisible(false)
+  }, [location]);
 
   return (
     <header className={`header-area header--transparent formobile-menu header--transparent color--black`}>
-      <div className="header-wrapper" id="header-wrapper">
+      <div className={`header-wrapper ${menuVisible ? 'menu-open' : ''}`} id="header-wrapper">
         <div className="header-left">
           <div className="logo">
             <Link to="/">
@@ -64,13 +65,13 @@ const Header = () => {
           </div>
           {/* Start Humberger Menu  */}
           <div className="humberger-menu d-block d-lg-none pl--20 pl_sm--10">
-            <span onClick={openMenu} className="menutrigger text-white">
+            <span onClick={() => setMenuVisible(true)} className="menutrigger text-white">
               <FiMenu />
             </span>
           </div>
           {/* End Humberger Menu  */}
           <div className="close-menu d-block d-lg-none">
-            <span onClick={closeMenu} className="closeTrigger">
+            <span onClick={() => setMenuVisible(false)} className="closeTrigger">
               <FiX />
             </span>
           </div>
